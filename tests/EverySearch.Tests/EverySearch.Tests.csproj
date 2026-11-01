@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>EverySearch.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The engine is plain .NET, so the tests compile the real source files instead of referencing the WinUI app. -->
+    <Compile Include="..\..\Services\Query.cs" Link="Engine\Query.cs" />
+    <Compile Include="..\..\Services\FileTypes.cs" Link="Engine\FileTypes.cs" />
+    <Compile Include="..\..\Services\FileIndex.cs" Link="Engine\FileIndex.cs" />
+    <Compile Include="..\..\Services\AppSettings.cs" Link="Engine\AppSettings.cs" />
+    <Compile Include="..\..\Services\UsageStore.cs" Link="Engine\UsageStore.cs" />
+    <Compile Include="..\..\Services\ContentSearch.cs" Link="Engine\ContentSearch.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+</Project>
